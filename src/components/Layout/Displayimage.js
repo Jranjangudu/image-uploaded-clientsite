@@ -16,7 +16,9 @@ function Displayimage(props) {
     try {
       const getuserimage = async () => {
         try {
-          const serverRes = await axios.get("/api/v1/user/image/server/");
+          const serverRes = await axios.get(
+            "https://mern-image-upload.herokuapp.com/api/v1/user/image/server/"
+          );
           setserverData(serverRes.data);
         } catch (error) {
           console.log(error);
@@ -29,14 +31,20 @@ function Displayimage(props) {
   }, [props.serverRes, setserverData]);
 
   const handellike = async (id) => {
-    await axios.post(`/api/v1/user/likes/${id}`);
+    await axios.post(
+      `https://mern-image-upload.herokuapp.com/api/v1/user/likes/${id}`
+    );
     // get like data
-    const serverRes = await axios.get("/api/v1/user/image/server/");
+    const serverRes = await axios.get(
+      "https://mern-image-upload.herokuapp.com/api/v1/user/image/server/"
+    );
 
     setserverData(serverRes.data);
   };
   let deleteimage = async (id) => {
-    await axios.delete(`/api/v1/user/delete/image/${id}`);
+    await axios.delete(
+      `https://mern-image-upload.herokuapp.com/api/v1/user/delete/image/${id}`
+    );
 
     history.push("/accessusers");
   };

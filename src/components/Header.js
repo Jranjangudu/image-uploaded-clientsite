@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-// import SearchIcon from "@material-ui/icons/Search";
-// import IconButton from "@material-ui/core/IconButton";
-// import InputBase from "@material-ui/core/InputBase";
 import logo from "../Asserts/Network.png";
 import Usercontext from "../Context/Usercontext";
 import "./header.css";

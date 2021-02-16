@@ -25,11 +25,11 @@ function App() {
     window.localStorage.setItem("auth-token"," ");
     token=""
    }
-    const tokenresponse=await axiox.post("/api/v1/user/tokenIsvalid",null,{headers:{"x-auth-token":token}})
-   
+    const tokenresponse=await axiox.post("https://mern-image-upload.herokuapp.com/api/v1/user/tokenIsvalid",null,{headers:{"x-auth-token":token}})
+    
   
     if(tokenresponse.data){
-     const userRes=await axiox.get("/api/v1/user/",{headers:{"x-auth-token":token}})
+     const userRes=await axiox.get("https://mern-image-upload.herokuapp.com/api/v1/user/",{headers:{"x-auth-token":token}})
     
      window.localStorage.setItem('id',userRes.data.id)
      setuserData({
@@ -37,7 +37,7 @@ function App() {
        userName:userRes.data.name,
        userEmail:userRes.data.email,
        userId:userRes.data.id
-       //userRes.data.name = return user name
+      
        
      })
     
@@ -53,7 +53,7 @@ function App() {
     <>
       <BrowserRouter>
     <Usercontext.Provider value={{userData,setuserData}} >
-    {/* <Header/> */}
+   
       <Switch>
         <Route path="/register" component={Register}/>
         <Route path="/"exact component={Login}/>
@@ -68,4 +68,3 @@ function App() {
 }
 
 export default App
-// userdata={userData.user.name}

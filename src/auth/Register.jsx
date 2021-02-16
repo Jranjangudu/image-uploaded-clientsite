@@ -24,7 +24,7 @@ function Register() {
     e.preventDefault();
    try {
      
-    await axios.post("/api/v1/user/post/data/", {
+    await axios.post("https://mern-image-upload.herokuapp.com/api/v1/user/post/data/", {
       name: name,
       email: email,
       password: password,
@@ -32,7 +32,7 @@ function Register() {
     });
 
     const userRes = await axios.post(
-      "/api/v1/user/login",
+      "https://mern-image-upload.herokuapp.com/api/v1/user/login",
       {
         email,
         password,

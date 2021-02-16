@@ -21,8 +21,13 @@ function Upload() {
       formData.append("images", uploadimage);
       formData.append("usercomment", comment);
       formData.append("username", userData.userName);
-      await axios.post("/api/v1/user/upload", formData);
-      const serverRes = await axios.get("/api/v1/user/image/server/");
+      await axios.post(
+        "https://mern-image-upload.herokuapp.com/api/v1/user/upload",
+        formData
+      );
+      const serverRes = await axios.get(
+        "https://mern-image-upload.herokuapp.com/api/v1/user/image/server/"
+      );
       setserverData(serverRes);
       setstate(false);
       setcomment("");

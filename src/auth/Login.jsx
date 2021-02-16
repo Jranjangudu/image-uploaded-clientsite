@@ -24,7 +24,7 @@ function Login() {
     e.preventDefault();
     try {
       const userRes = await axios.post(
-        "/api/v1/user/login",
+        "https://mern-image-upload.herokuapp.com/api/v1/user/login",
         {
           email,
           password,
